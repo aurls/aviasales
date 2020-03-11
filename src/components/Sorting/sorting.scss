@@ -1,0 +1,47 @@
+@import '../../constants/styleConstants.scss';
+
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.sorting__item {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 50px;
+  border: 1px solid #dfe5ec;
+  border-right: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #4a4a4a;
+
+  &:hover {
+    background: $lightPrimaryColor;
+    transition: all $standardTransition;
+  }
+
+  &:first-child {
+    border-radius: 5px 0 0 5px;
+  }
+
+  &:last-child {
+    border-radius: 0 5px 5px 0;
+    border-right: 1px solid #dfe5ec;
+  }
+
+  &.is-active {
+    border-color: $primaryColor;
+    background: $primaryColor;
+    color: white;
+  }
+}

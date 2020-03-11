@@ -1,0 +1,38 @@
+@import '../../constants/styleConstants.scss';
+
+.ticket.is-processing {
+  & .ticket__price,
+  & .ticket__carrier,
+  & .ticket__segment-subtitle,
+  & .ticket__segment-info {
+    height: 1em;
+    background: rgba(0, 0, 0, .1);
+    animation: blink $standardAnimation;
+  }
+
+  & .ticket__price {
+    width: 8em;
+    max-width: calc(100% / 2);
+    margin-top: 0;
+    height: 36px;
+  }
+
+  & .ticket__carrier {
+    width: calc(100% / 3);
+    height: 36px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

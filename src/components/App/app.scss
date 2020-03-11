@@ -1,0 +1,49 @@
+@import '../../constants/styleConstants.scss';
+
+body {
+  background: #f3f7fa;
+  font-family: 'Open Sans', sans-serif;
+  color: #4a4a4a;
+}
+
+.app {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: calc(754px + 40px);
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+.app__sidebar {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.app__main {
+  width: calc(70% - 20px);
+}
+
+@media (max-width: $mobileBreakpoint) {
+  .app__sidebar,
+  .app__main {
+    width: 100%;
+  }
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src:
+    url('../../assets/fonts/OpenSans-regular-webfont.woff') format('woff'),
+    url('../../assets/fonts/OpenSans-regular-webfont.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src:
+    url('../../assets/fonts/OpenSans-semibold-webfont.woff') format('woff'),
+    url('../../assets/fonts/OpenSans-semibold-webfont.ttf') format('truetype');
+  font-weight: 600;
+}

@@ -1,0 +1,11 @@
+@import '../../constants/styleConstants.scss';
+
+.error-boundary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 504px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+}

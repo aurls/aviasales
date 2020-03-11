@@ -1,0 +1,35 @@
+@import '../../constants/styleConstants.scss';
+
+.tickets-not-found {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+  text-align: center;
+}
+
+.tickets-not-found__message {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.tickets-not-found__button {
+  height: 36px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 2px;
+  padding: 0 20px;
+  background: $secondaryColor;
+  appearance: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+
+  &:hover {
+    background: $lightSecondaryColor;
+    transition: all $standardTransition;
+  }
+}

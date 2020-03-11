@@ -1,0 +1,91 @@
+@import '../../constants/styleConstants.scss';
+
+.ticket {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+}
+
+.ticket__price {
+  width: calc(100% / 3 * 2);
+  margin-top: 6px;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 600;
+  color: $primaryColor;
+}
+
+.ticket__carrier {
+  width: calc(100% / 3);
+  margin-left: auto;
+  margin-bottom: 20px;
+  height: 36px;
+}
+
+.ticket__carrier-logo {
+  height: 100%;
+}
+
+.ticket__segment {
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ticket__time,
+.ticket__duration,
+.ticket__transfers {
+  width: calc(100% / 3);
+}
+
+.ticket__segment-subtitle {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #a0b0b9;
+}
+
+.ticket__segment-info {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+@media (max-width: $mobileBreakpoint) {
+  .ticket__price {
+    width: calc(100% / 2);
+  }
+
+  .ticket__carrier {
+    width: auto;
+  }
+
+  .ticket__carrier-logo {
+    margin-left: auto;
+  }
+
+  .ticket__segment {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 2 - 10px);
+    margin-bottom: 0;
+  }
+
+  .ticket__time,
+  .ticket__duration,
+  .ticket__transfers {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
