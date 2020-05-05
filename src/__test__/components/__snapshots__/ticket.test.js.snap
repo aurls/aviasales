@@ -2,7 +2,7 @@
 
 exports[`Ticket component Default state 1`] = `
 <section
-  className="ticketTest"
+  className="ticket"
 >
   <div
     className="ticket__price"
