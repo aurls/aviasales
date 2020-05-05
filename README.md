@@ -1,4 +1,9 @@
 # Тестовое задание Aviasales на позицию Frontend Developer
+
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
+[![Build Status](https://travis-ci.org/vladtaranov/aviasales.svg?branch=master)](https://travis-ci.org/vladtaranov/aviasales)
+[![Coverage Status](https://coveralls.io/repos/github/vladtaranov/aviasales/badge.svg?branch=master)](https://coveralls.io/github/vladtaranov/aviasales?branch=master)
+
 ### Уровень — junior. Демо [по ссылке](https://vladtaranov.github.io/aviasales-demo/).
 
 _Выполнено в январе 2020 г._
