@@ -1,4 +1,5 @@
 const Path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -9,8 +10,10 @@ module.exports = (env = {}) => {
 
   const getPlugins = () => {
     const plugins = [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './src/index.html',
+        favicon: './src/assets/images/favicon.png'
       })
     ];
     if (isProduction) {
@@ -34,9 +37,10 @@ module.exports = (env = {}) => {
 
   return {
     mode: isDevelopment ? 'development' : 'production',
+    devtool: isDevelopment ? 'inline-source-map' : 'source-map',
     entry: './src/index.js',
     output: {
-      path: Path.resolve(__dirname, 'dist'),
+      path: Path.join(__dirname, 'dist'),
       filename: isProduction ? 'bundle-[hash:5].js' : undefined
     },
     devServer: {

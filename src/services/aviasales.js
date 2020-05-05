@@ -32,7 +32,8 @@ export default class Aviasales {
   _transformTickets (response) {
     const tickets = response.tickets;
     tickets.map((ticket) => {
-      const dataForHash = `${ticket.price}${ticket.origin}${ticket.carrier}${ticket.segments[0].date}`;
+      const dataForHash =
+        `${ticket.price}${ticket.origin}${ticket.carrier}${ticket.segments[0].date}`;
       ticket.id = Math.abs(crc32.str(dataForHash));
     });
     return {

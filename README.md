@@ -1,5 +1,5 @@
 # Тестовое задание Aviasales на позицию Frontend Developer
-### Уровень — pre-junior/junior. Демо [по ссылке](https://vladtaranov.github.io/aviasales-demo/).
+### Уровень — junior. Демо [по ссылке](https://vladtaranov.github.io/aviasales-demo/).
 
 _Выполнено в январе 2020 г._
 

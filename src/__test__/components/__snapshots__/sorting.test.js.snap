@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sorting component Default state 1`] = `
+<ul
+  className="sorting"
+>
+  <li
+    className="sorting__item is-active"
+    id="BY_PRICE_ASC"
+    key="BY_PRICE_ASC"
+    onClick={[Function]}
+  >
+    Самый дешёвый
+  </li>
+  <li
+    className="sorting__item"
+    id="BY_SPEED_ASC"
+    key="BY_SPEED_ASC"
+    onClick={[Function]}
+  >
+    Самый быстрый
+  </li>
+</ul>
+`;

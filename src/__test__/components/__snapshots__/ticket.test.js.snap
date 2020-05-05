@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket component Default state 1`] = `
+<section
+  className="ticketTest"
+>
+  <div
+    className="ticket__price"
+  >
+    24 769
+     Р
+  </div>
+  <div
+    className="ticket__carrier"
+  >
+    <img
+      alt="EY-logo"
+      className="ticket__carrier-logo"
+      src="http://pics.avs.io/99/36/EY.png"
+    />
+  </div>
+  <div
+    className="ticket__segment"
+    key="undefined797"
+  >
+    <div
+      className="ticket__time"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        MOW
+         – 
+        HKT
+      </h3>
+      <p
+        className="ticket__segment-info"
+      >
+        1:24 AM
+         – 
+        2:41 PM
+      </p>
+    </div>
+    <div
+      className="ticket__duration"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        В пути
+      </h3>
+      <p
+        className="ticket__segment-info"
+      >
+        13ч 17м
+      </p>
+    </div>
+    <div
+      className="ticket__transfers"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        Без пересадок
+      </h3>
+      <p
+        className="ticket__segment-info"
+      />
+    </div>
+  </div>
+  <div
+    className="ticket__segment"
+    key="undefined775"
+  >
+    <div
+      className="ticket__time"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        MOW
+         – 
+        HKT
+      </h3>
+      <p
+        className="ticket__segment-info"
+      >
+        1:10 PM
+         – 
+        2:05 AM
+      </p>
+    </div>
+    <div
+      className="ticket__duration"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        В пути
+      </h3>
+      <p
+        className="ticket__segment-info"
+      >
+        12ч 55м
+      </p>
+    </div>
+    <div
+      className="ticket__transfers"
+    >
+      <h3
+        className="ticket__segment-subtitle"
+      >
+        Без пересадок
+      </h3>
+      <p
+        className="ticket__segment-info"
+      />
+    </div>
+  </div>
+</section>
+`;

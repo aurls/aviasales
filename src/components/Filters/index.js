@@ -7,7 +7,7 @@ import * as filters from '../../constants/filters';
 import { filters as filtersActions } from '../../actions';
 import './filters.scss';
 
-const Filters = ({ appliedFilters, setFilter }) => {
+export const Filters = ({ appliedFilters, setFilter }) => {
   const isFilterChecked = (filter) => {
     return appliedFilters.includes(filters.ALL.type) || appliedFilters.includes(filter.type);
   };

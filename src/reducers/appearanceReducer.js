@@ -1,7 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const initialState = {
-  isFetching: true,
+export const initialState = {
+  isFetching: false,
   hasError: false
 };
 

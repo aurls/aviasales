@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
 import ticketsReducer from './ticketsReducer';
-import filtersReducer from './filtersReducer';
+import filterReducer from './filterReducer';
 import sortingReducer from './sortingReducer';
 import appearanceReducer from './appearanceReducer';
 
 const rootReducer = combineReducers({
   tickets: ticketsReducer,
-  appliedFilters: filtersReducer,
+  appliedFilters: filterReducer,
   appliedSorting: sortingReducer,
   appearance: appearanceReducer
 });

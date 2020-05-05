@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import * as filters from '../../constants/filters';
 import formatNumber from '../../utils/formatNumber';
-import getWordFormAfterNumber from '../../utils/getWordFormAfterNumber';
+import index from '../../utils/getWordFormAfterNumber';
 import './tickets-not-found.scss';
 
 const TicketsNotFound = ({ ticketsCount, setFilter }) => {
@@ -17,7 +17,7 @@ const TicketsNotFound = ({ ticketsCount, setFilter }) => {
         {
           `Мы нашли
           ${formatNumber(ticketsCount)}
-          ${getWordFormAfterNumber(ticketsCount, ['рейс', 'рейса', 'рейсов'])},
+          ${index(ticketsCount, ['рейс', 'рейса', 'рейсов'])},
           но ни один не соответствует заданным фильтрам`
         }
       </p>

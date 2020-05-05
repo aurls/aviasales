@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { formatPrice, getDepartureTime, getArrivalTime, getDuration, getTransfersTitle } from '../../utils/formatters';
+import {
+  formatPrice,
+  getDepartureTime,
+  getArrivalTime,
+  getDuration,
+  getTransfersTitle
+} from '../../utils/formatters';
 import './ticket.scss';
 
-const Ticket = ({ ticket }) => {
+export const Ticket = ({ ticket }) => {
   const getCarrierUrl = (iataCode) => {
     return `http://pics.avs.io/99/36/${iataCode}.png`;
   };

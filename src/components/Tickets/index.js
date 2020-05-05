@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { appearance, tickets as ticketsActions, filters as filtersActions } from '../../actions';
-import Aviasales from '../../services/aviasales';
+import { tickets as ticketsActions, filters as filtersActions } from '../../actions';
 import filterTickets from '../../services/filterTickets';
 import sortTickets from '../../services/sortTickets';
 
@@ -16,39 +15,8 @@ import ErrorMessage from '../ErrorMessage';
 
 class Tickets extends React.Component {
   componentDidMount () {
-    this.fetchTickets();
-  }
-
-  async fetchTickets () {
-    const { setFetching, setError, saveTickets } = this.props;
-    setFetching(true);
-    const aviasales = new Aviasales();
-
-    aviasales.getSearchId()
-      .then(searchId => {
-        getTickets(searchId);
-      })
-      .catch((error) => {
-        setFetching(false);
-        setError(true);
-        throw new Error(error);
-      });
-
-    function getTickets (searchId) {
-      aviasales.getTickets(searchId)
-        .then(response => {
-          saveTickets(response.tickets);
-          if (response.stop) {
-            setFetching(false);
-          } else {
-            getTickets(searchId);
-          }
-        })
-        .catch((error) => {
-          getTickets(searchId);
-          throw new Error(error);
-        });
-    }
+    const { fetchTickets } = this.props;
+    fetchTickets();
   }
 
   render () {
@@ -92,9 +60,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setFilter: bindActionCreators(filtersActions.setFilter, dispatch),
-    setFetching: bindActionCreators(appearance.setFetching, dispatch),
-    setError: bindActionCreators(appearance.setError, dispatch),
-    saveTickets: bindActionCreators(ticketsActions.saveTickets, dispatch)
+    fetchTickets: bindActionCreators(ticketsActions.fetchTickets, dispatch)
   };
 };
 
@@ -104,9 +70,7 @@ Tickets.propTypes = {
   appliedSorting: PropTypes.array.isRequired,
   appearance: PropTypes.object.isRequired,
   setFilter: PropTypes.func.isRequired,
-  setFetching: PropTypes.func.isRequired,
-  setError: PropTypes.func.isRequired,
-  saveTickets: PropTypes.func.isRequired
+  fetchTickets: PropTypes.func.isRequired
 };
 
 export default connect(

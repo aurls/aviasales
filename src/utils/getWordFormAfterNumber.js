@@ -1,4 +1,4 @@
-const getWordFormAfterNumber = (number, wordForms) => {
+export default (number, wordForms) => {
   const n1 = Math.abs(number) % 100;
   const n2 = number % 10;
   if (n1 > 10 && n1 < 20) return wordForms[2];
@@ -6,5 +6,3 @@ const getWordFormAfterNumber = (number, wordForms) => {
   if (n2 === 1) return wordForms[0];
   return wordForms[2];
 };
-
-export default getWordFormAfterNumber;

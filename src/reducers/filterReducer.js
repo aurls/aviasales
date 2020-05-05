@@ -1,9 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 import * as filters from '../constants/filters';
 
-const initialState = [filters.ALL.type];
+export const initialState = [filters.ALL.type];
 
-const filtersReducer = (state = initialState, action) => {
+const filterReducer = (state = initialState, action) => {
   if (action.type === actionTypes.SET_FILTER) {
     return setFilter(state, action.payload);
   }
@@ -44,4 +44,4 @@ function setFilter (state, pressedFilter) {
   return nextState;
 }
 
-export default filtersReducer;
+export default filterReducer;

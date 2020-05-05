@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/actionTypes';
 
-const initialState = [];
+export const initialState = [];
 
 const ticketsReducer = (state = initialState, action) => {
   if (action.type === actionTypes.SAVE_TICKETS) {

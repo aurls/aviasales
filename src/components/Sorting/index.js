@@ -7,7 +7,7 @@ import * as sorting from '../../constants/sorting';
 import { sorting as sortingActions } from '../../actions';
 import './sorting.scss';
 
-const Sorting = ({ appliedSorting, setSorting }) => {
+export const Sorting = ({ appliedSorting, setSorting }) => {
   const onChangeSorting = (event) => {
     setSorting(event.target.id);
   };
