@@ -18,7 +18,8 @@ export const getArrivalTime = (departureTime, duration) => {
 export const formatTime = (time) => {
   const options = {
     hour: '2-digit',
-    minute: '2-digit'
+    minute: '2-digit',
+    timeZone: 'Europe/Moscow'
   };
   return new Date(time).toLocaleTimeString([], options);
 };
