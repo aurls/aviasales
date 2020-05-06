@@ -8,14 +8,14 @@ const ticketTest = {
     {
       origin: 'MOW',
       destination: 'HKT',
-      date: '2020-02-08T22:24:00.000Z',
+      date: '2020-02-08T20:24:00.000Z',
       stops: [],
       duration: 797
     },
     {
       origin: 'MOW',
       destination: 'HKT',
-      date: '2020-02-29T10:10:00.000Z',
+      date: '2020-02-29T7:10:00.000Z',
       stops: [],
       duration: 775
     }

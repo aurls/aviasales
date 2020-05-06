@@ -36,9 +36,9 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        1:24 AM
+        11:24 PM
          – 
-        2:41 PM
+        12:41 PM
       </p>
     </div>
     <div
@@ -85,9 +85,9 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        1:10 PM
+        Invalid Date
          – 
-        2:05 AM
+        Invalid Date
       </p>
     </div>
     <div
