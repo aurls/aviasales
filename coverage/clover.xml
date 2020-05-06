@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1588717416477" clover="3.2.0">
-  <project timestamp="1588717416478" name="All files">
+<coverage generated="1588777394262" clover="3.2.0">
+  <project timestamp="1588777394263" name="All files">
     <metrics statements="165" coveredstatements="143" conditionals="59" coveredconditionals="41" methods="50" coveredmethods="37" elements="274" coveredelements="221" complexity="0" loc="165" ncloc="165" packages="8" files="19" classes="19"/>
     <package name="actions">
       <metrics statements="25" coveredstatements="24" conditionals="2" coveredconditionals="1" methods="8" coveredmethods="8"/>
@@ -228,15 +228,15 @@
         <line num="15" count="2" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="4" type="stmt"/>
-        <line num="23" count="4" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="29" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
       </file>
       <file name="getWordFormAfterNumber.js" path="D:\OneDrive\frontend\packages\aviasales\src\utils\getWordFormAfterNumber.js">
         <metrics statements="6" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="1" coveredmethods="0"/>
