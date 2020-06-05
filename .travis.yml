@@ -23,6 +23,3 @@ deploy:
   local_dir: dist
   on:
     branch: master
-
-after_success:
-  cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
