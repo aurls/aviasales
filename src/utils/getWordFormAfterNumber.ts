@@ -1,4 +1,4 @@
-export default (number, wordForms) => {
+export default (number: number, wordForms: [string, string, string]): string => {
   const n1 = Math.abs(number) % 100;
   const n2 = number % 10;
   if (n1 > 10 && n1 < 20) return wordForms[2];

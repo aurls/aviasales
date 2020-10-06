@@ -7,6 +7,7 @@ const formatNumber = (number: number): string => {
     result = str[i] + result;
     counter++;
   }
+
   return result;
 };
 
