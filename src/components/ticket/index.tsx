@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import Types from '../../types';
 import {
   formatPrice,
   getDepartureTime,
@@ -10,8 +9,12 @@ import {
 } from '../../utils/formatters';
 import './ticket.scss';
 
-export const Ticket = ({ ticket }) => {
-  const getCarrierUrl = (iataCode) => {
+type Props = {
+  ticket: Types.Ticket
+}
+
+const Ticket: React.FC<Props> = ({ ticket }: Props) => {
+  const getCarrierUrl = (iataCode: string): string => {
     return `http://pics.avs.io/99/36/${iataCode}.png`;
   };
 
@@ -61,10 +64,6 @@ export const Ticket = ({ ticket }) => {
       }
     </section>
   );
-};
-
-Ticket.propTypes = {
-  ticket: PropTypes.object.isRequired
 };
 
 export default Ticket;
