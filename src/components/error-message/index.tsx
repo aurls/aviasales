@@ -1,8 +1,7 @@
 import React from 'react';
-
 import './error-message.scss';
 
-const ErrorMessage = () => {
+const ErrorMessage: React.FC = () => {
   return (
     <section className="error-message">
       <h2 className="error-message__title">

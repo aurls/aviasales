@@ -1,16 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import ErrorMessage from '../ErrorMessage';
+import ErrorMessage from '../error-message';
 import './error-boundary.scss';
 
-class ErrorBoundary extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      hasReactError: false
-    };
-  }
+type Props = {
+  children: React.ReactNode
+}
+
+type State = {
+  hasReactError: boolean
+}
+
+class ErrorBoundary extends React.Component<Props, State> {
+  state: State = {
+    hasReactError: false
+  };
 
   componentDidCatch () {
     this.setState({
@@ -29,9 +32,5 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
-
-ErrorBoundary.propTypes = {
-  children: PropTypes.element.isRequired
-};
 
 export default ErrorBoundary;
