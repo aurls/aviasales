@@ -1,5 +1,5 @@
 import appearanceReducer, { initialState } from '../../reducers/appearanceReducer';
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 
 describe('Appearance reducer', () => {
   it('Set fetching', () => {

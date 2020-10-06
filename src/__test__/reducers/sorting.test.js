@@ -1,5 +1,5 @@
 import sortingReducer, { initialState } from '../../reducers/sortingReducer';
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import * as sorting from '../../constants/sorting';
 
 describe('Sorting reducer', () => {

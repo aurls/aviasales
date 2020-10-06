@@ -2,9 +2,9 @@ import fetchMock from 'fetch-mock-jest';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import { fetchTickets } from '../../actions/tickets';
-import Aviasales from '../../services/aviasales';
+import Aviasales from '../../services/server';
 
 describe('Tickets action creators', () => {
   const middlewares = [thunk];

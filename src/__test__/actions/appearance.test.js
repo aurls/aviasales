@@ -1,4 +1,4 @@
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import { setFetching, setError } from '../../actions/appearance';
 
 describe('Appearance action creators', () => {

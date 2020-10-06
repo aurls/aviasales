@@ -1,5 +1,5 @@
 import ticketsReducer from '../../reducers/ticketsReducer';
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 
 describe('Tickets reducer', () => {
   const currentState = [

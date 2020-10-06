@@ -1,4 +1,4 @@
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import { setSorting } from '../../actions/sorting';
 import * as sorting from '../../constants/sorting';
 

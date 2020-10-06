@@ -1,4 +1,4 @@
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import { setFilter } from '../../actions/filters';
 import * as filters from '../../constants/filters';
 

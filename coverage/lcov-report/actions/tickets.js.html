@@ -15,41 +15,41 @@
         }
     </style>
 </head>
-    
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
         <h1><a href="../index.html">All files</a> / <a href="index.html">actions</a> tickets.js</h1>
         <div class='clearfix'>
-            
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">89.47% </span>
                 <span class="quiet">Statements</span>
                 <span class='fraction'>17/19</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
                 <span class='fraction'>1/2</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
                 <span class='fraction'>4/4</span>
             </div>
-        
-            
+
+
             <div class='fl pad1y space-right2'>
                 <span class="strong">94.12% </span>
                 <span class="quiet">Lines</span>
                 <span class='fraction'>16/17</span>
             </div>
-        
-            
+
+
         </div>
         <p class="quiet">
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -131,7 +131,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as actionTypes from '../constants/actionTypes';
 import { appearance } from './index';
-import Aviasales from '../services/aviasales';
+import Server from '../services/aviasales';
 &nbsp;
 const saveTickets = (tickets) =&gt; {
   return {
@@ -143,7 +143,7 @@ const saveTickets = (tickets) =&gt; {
 export const fetchTickets = () =&gt; async (dispatch) =&gt; {
   dispatch(appearance.setFetching(true));
 &nbsp;
-  const aviasales = new Aviasales();
+  const aviasales = new Server();
   let searchId = '';
 &nbsp;
   const fetchTicketsPiece = async () =&gt; {
@@ -185,4 +185,3 @@ export const fetchTickets = () =&gt; async (dispatch) =&gt; {
         <script src="../block-navigation.js"></script>
     </body>
 </html>
-    

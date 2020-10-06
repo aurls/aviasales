@@ -1,5 +1,5 @@
 import filterReducer, { initialState } from '../../reducers/filterReducer';
-import * as actionTypes from '../../constants/actionTypes';
+import * as actionTypes from '../../store/actionTypes';
 import * as filters from '../../constants/filters';
 
 describe('Filter reducer', () => {
