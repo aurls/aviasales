@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 import './header.scss';
 import logo from './logo.png';
 
-const Header = ({ appearance }) => {
+const Header = ({ isFetching }) => {
   let logoStyle = 'header__logo';
-  if (appearance.isFetching) logoStyle += ' is-fetching';
+  if (isFetching) logoStyle += ' is-fetching';
 
   return (
     <header className="header">
@@ -18,12 +16,12 @@ const Header = ({ appearance }) => {
 
 const mapStateToProps = (state) => {
   return {
-    appearance: state.appearance
+    isFetching: selectors.getIsFetching(state)
   };
 };
 
 Header.propTypes = {
-  appearance: PropTypes.object.isRequired
+  isFetching: PropTypes.bool.isRequired
 };
 
-export default connect(mapStateToProps)(Header);
+export default React.memo(Header);
