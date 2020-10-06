@@ -69,6 +69,12 @@
   "browserslist": [
     "> 2%"
   ],
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  },
   "jest": {
     "setupFiles": [
       "./src/__test__/setupTests.js"
