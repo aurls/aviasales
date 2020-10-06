@@ -47,7 +47,7 @@ module.exports = (env = {}) => {
   return {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'inline-source-map' : false,
-    entry: createPath(__dirname, paths.DEV, 'index.js'),
+    entry: createPath(__dirname, paths.DEV, 'index.tsx'),
     output: {
       path: createPath(__dirname, paths.PROD),
       filename: createPath(paths.ASSETS, 'js', 'bundle-[hash:5].js')
@@ -76,7 +76,10 @@ module.exports = (env = {}) => {
         {
           test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
-          use: 'ts-loader'
+          use: [
+            'babel-loader',
+            'ts-loader'
+          ]
         },
 
         // Loading styles
