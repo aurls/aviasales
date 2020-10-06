@@ -1,4 +1,4 @@
-const Path = require('path');
+const createPath = require('path').posix.join;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -18,14 +18,14 @@ module.exports = (env = {}) => {
     const plugins = [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: Path.join(paths.DEV, 'index.html'),
-        favicon: Path.join(paths.DEV, paths.ASSETS, 'images', 'favicon.png')
+        template: createPath(paths.DEV, 'index.html'),
+        favicon: createPath(paths.DEV, paths.ASSETS, 'images', 'favicon.png')
       })
     ];
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: Path.join(paths.ASSETS, 'style', 'style-[hash:5].css')
+          filename: createPath(paths.ASSETS, 'style', 'style-[hash:5].css')
         })
       );
     }
@@ -37,9 +37,7 @@ module.exports = (env = {}) => {
       isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
       'css-loader'
     ];
-
     if (isProduction) loaders.push('postcss-loader');
-
     return [
       ...loaders,
       'sass-loader'
@@ -49,16 +47,17 @@ module.exports = (env = {}) => {
   return {
     mode: isDevelopment ? 'development' : 'production',
     devtool: isDevelopment ? 'inline-source-map' : false,
-    entry: Path.join(__dirname, paths.DEV, 'index.js'),
+    entry: createPath(__dirname, paths.DEV, 'index.js'),
     output: {
-      path: Path.join(__dirname, paths.PROD),
-      filename: Path.join(paths.ASSETS, 'js', 'bundle-[hash:5].js')
+      path: createPath(__dirname, paths.PROD),
+      filename: createPath(paths.ASSETS, 'js', 'bundle-[hash:5].js')
     },
     devServer: {
-      contentBase: Path.join(__dirname, paths.PROD),
+      contentBase: createPath(__dirname, paths.PROD),
       port: 9000,
       compress: true,
-      open: true
+      open: true,
+      historyApiFallback: true
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js']
@@ -72,17 +71,20 @@ module.exports = (env = {}) => {
           exclude: /node_modules/,
           use: 'babel-loader'
         },
+
         // Loading TS
         {
           test: /\.(ts|tsx)$/,
           exclude: /node_modules/,
           use: 'ts-loader'
         },
+
         // Loading styles
         {
           test: /\.(scss|sass)$/,
           use: getStyleLoaders()
         },
+
         // Loading images
         {
           test: /\.(jpg|jpeg|png)$/,
@@ -91,12 +93,16 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 name: '[name]-[hash:5].[ext]',
-                outputPath: Path.join(paths.ASSETS, 'images'),
-                publicPath: '../images'
+                outputPath: createPath(paths.ASSETS, 'images'),
+                publicPath: isProduction
+                  ? '../images'
+                  : createPath(paths.ASSETS, 'images'),
+                esModule: false
               }
             }
           ]
         },
+
         // Loading fonts
         {
           test: /\.(woff2|woff|ttf)(\?v=\d+\.\d+\.\d+)?$/,
@@ -105,8 +111,10 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 name: '[name]-[hash:5].[ext]',
-                outputPath: Path.join(paths.ASSETS, 'fonts'),
-                publicPath: '../fonts'
+                outputPath: createPath(paths.ASSETS, 'fonts'),
+                publicPath: isProduction
+                  ? '../fonts'
+                  : createPath(paths.ASSETS, 'fonts')
               }
             }
           ]
