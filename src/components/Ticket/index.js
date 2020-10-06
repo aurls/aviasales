@@ -18,7 +18,7 @@ export const Ticket = ({ ticket }) => {
   return (
     <section key={ticket.id} className="ticket">
       <div className="ticket__price">
-        {formatPrice(ticket.price)}&nbsp;Р
+        {formatPrice(ticket.price)}&nbsp;₽
       </div>
       <div className="ticket__carrier">
         <img className="ticket__carrier-logo"

@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.com/vladtaranov/aviasales.svg?branch=master)](https://travis-ci.com/vladtaranov/aviasales)
 [![Coverage Status](https://coveralls.io/repos/github/vladtaranov/aviasales/badge.svg?branch=master)](https://coveralls.io/github/vladtaranov/aviasales?branch=master)
 
-#### Задача — сделать страницу выдачи билетов. Уровень — junior
+#### Задача — сделать страницу выдачи билетов
 
 ---
 
@@ -29,12 +29,3 @@
 * ```npm run watch``` — запускаем webpack-dev-server
 * ```npm run test``` — тестируем
 * ```npm run build``` — билдим
-
-#### Особенности выполненного задания
-* Самостоятельно настроенный Webpack
-* Деплой через Travis
-* ES6+, Jest/Enzyme
-* Pixel Perfect
-* Отзывчивая вёрстка
-* Компонентный подход — ключевые компоненты независимы друг от друга
-* Линтёры для JS, SCSS
