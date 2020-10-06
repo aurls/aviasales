@@ -18,14 +18,14 @@ module.exports = (env = {}) => {
     const plugins = [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: `./${paths.DEV}/index.html`,
-        favicon: `./${paths.DEV}/${paths.ASSETS}/images/favicon.png`
+        template: Path.join(paths.DEV, 'index.html'),
+        favicon: Path.join(paths.DEV, paths.ASSETS, 'images', 'favicon.png')
       })
     ];
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: 'style-[hash:5].css'
+          filename: Path.join(paths.ASSETS, 'style', 'style-[hash:5].css')
         })
       );
     }
@@ -33,27 +33,35 @@ module.exports = (env = {}) => {
   };
 
   const getStyleLoaders = () => {
-    return [
+    const loaders = [
       isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader',
-      'postcss-loader',
+      'css-loader'
+    ];
+
+    if (isProduction) loaders.push('postcss-loader');
+
+    return [
+      ...loaders,
       'sass-loader'
     ];
   };
 
   return {
     mode: isDevelopment ? 'development' : 'production',
-    devtool: isDevelopment ? 'inline-source-map' : 'source-map',
-    entry: `./${paths.DEV}/index.js`,
+    devtool: isDevelopment ? 'inline-source-map' : false,
+    entry: Path.join(__dirname, paths.DEV, 'index.js'),
     output: {
       path: Path.join(__dirname, paths.PROD),
-      filename: isProduction ? 'bundle-[hash:5].js' : undefined
+      filename: Path.join(paths.ASSETS, 'js', 'bundle-[hash:5].js')
     },
     devServer: {
       contentBase: Path.join(__dirname, paths.PROD),
       port: 9000,
       compress: true,
       open: true
+    },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js']
     },
     plugins: getPlugins(),
     module: {
@@ -83,7 +91,8 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 name: '[name]-[hash:5].[ext]',
-                outputPath: 'images/'
+                outputPath: Path.join(paths.ASSETS, 'images'),
+                publicPath: '../images'
               }
             }
           ]
@@ -96,7 +105,8 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 name: '[name]-[hash:5].[ext]',
-                outputPath: 'fonts/'
+                outputPath: Path.join(paths.ASSETS, 'fonts'),
+                publicPath: '../fonts'
               }
             }
           ]
