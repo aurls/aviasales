@@ -1,8 +1,11 @@
 import React from 'react';
+import './tickets-processing.scss';
 
-import './tickets-are-processing.scss';
+type TicketPlaceholder = {
+  segments: []
+}
 
-const TicketsAreProcessing = () => {
+const TicketsProcessing: React.FC = () => {
   const ticketPlaceholder = { segments: [0, 1] };
   const tickets = new Array(6);
   tickets.fill(ticketPlaceholder, 0, 6);
@@ -15,7 +18,7 @@ const TicketsAreProcessing = () => {
             <div className="ticket__price" />
             <div className="ticket__carrier" />
             {
-              item.segments.map((item, index) =>
+              item.segments.map((item: TicketPlaceholder, index: number) =>
                 <div key={index} className="ticket__segment">
                   <div className="ticket__time">
                     <div className="ticket__segment-subtitle" />
@@ -39,4 +42,4 @@ const TicketsAreProcessing = () => {
   );
 };
 
-export default TicketsAreProcessing;
+export default TicketsProcessing;
