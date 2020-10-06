@@ -1,4 +1,4 @@
-const formatNumber = (number) => {
+const formatNumber = (number: number): string => {
   const str = String(number);
   let result = '';
   let counter = 0;
