@@ -5,17 +5,17 @@ export const formatPrice = (price: number): string => {
   return formatNumber(price);
 };
 
-export const getDepartureTime = (time: number): string => {
+export const getDepartureTime = (time: string): string => {
   return formatTime(time);
 };
 
-export const getArrivalTime = (departureTime: number, duration: number): string => {
+export const getArrivalTime = (departureTime: string, duration: number): string => {
   let timestamp = new Date(departureTime).getTime();
   timestamp += duration * 1000 * 60;
   return formatTime(timestamp);
 };
 
-export const formatTime = (time: number): string => {
+export const formatTime = (time: string | number): string => {
   const options = {
     hour: '2-digit',
     minute: '2-digit',
