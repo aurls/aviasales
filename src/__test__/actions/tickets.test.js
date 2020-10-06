@@ -6,7 +6,7 @@ import * as actionTypes from '../../store/actionTypes';
 import { fetchTickets } from '../../actions/tickets';
 import Aviasales from '../../services/server';
 
-describe('Tickets action creators', () => {
+describe('tickets action creators', () => {
   const middlewares = [thunk];
   const storeMock = configureStore(middlewares);
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import * as filters from '../../constants/filters';
 import formatNumber from '../../utils/formatNumber';
 import index from '../../utils/getWordFormAfterNumber';

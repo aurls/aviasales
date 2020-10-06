@@ -1,7 +1,7 @@
 import ticketsReducer from '../../reducers/ticketsReducer';
 import * as actionTypes from '../../store/actionTypes';
 
-describe('Tickets reducer', () => {
+describe('tickets reducer', () => {
   const currentState = [
     { id: 1 }, { id: 2 }
   ];

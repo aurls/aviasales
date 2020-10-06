@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ticket } from '../../components/Ticket';
+import { Ticket } from '../../components/ticket';
 
 const ticketTest = {
   price: 24769,
@@ -22,7 +22,7 @@ const ticketTest = {
   ]
 };
 
-describe('Ticket component', () => {
+describe('ticket component', () => {
   let component;
 
   beforeEach(() => {
