@@ -5,10 +5,15 @@
     "node": true,
     "jest": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "standard",
     "eslint:recommended",
     "plugin:react/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -19,12 +24,9 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
   "rules": {
     "semi": ["error", "always"]
   }
