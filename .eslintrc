@@ -28,6 +28,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-use-before-define": "off",
     "semi": ["error", "always"]
   }
 }
