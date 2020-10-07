@@ -1,12 +1,23 @@
 import React from 'react';
-import * as filters from '../../constants/filters';
+import actions from '../../store/actions';
+import filters from '../../services/filters';
 import formatNumber from '../../utils/formatNumber';
-import index from '../../utils/getWordFormAfterNumber';
+import getWordFormAfterNumber from '../../utils/getWordFormAfterNumber';
 import './tickets-not-found.scss';
 
-const TicketsNotFound = ({ ticketsCount, setFilter }) => {
+type Props = {
+  ticketsCount: number
+  setFilter: typeof actions.setFilter
+}
+
+const TicketsNotFound: React.FC<Props> = (props: Props) => {
+  const {
+    ticketsCount,
+    setFilter
+  } = props;
+
   const onResetFilters = () => {
-    setFilter(filters.ALL.type);
+    setFilter(filters.ALL);
   };
 
   return (
@@ -15,7 +26,7 @@ const TicketsNotFound = ({ ticketsCount, setFilter }) => {
         {
           `Мы нашли
           ${formatNumber(ticketsCount)}
-          ${index(ticketsCount, ['рейс', 'рейса', 'рейсов'])},
+          ${getWordFormAfterNumber(ticketsCount, ['рейс', 'рейса', 'рейсов'])},
           но ни один не соответствует заданным фильтрам`
         }
       </p>
@@ -26,11 +37,6 @@ const TicketsNotFound = ({ ticketsCount, setFilter }) => {
       </button>
     </section>
   );
-};
-
-TicketsNotFound.propTypes = {
-  ticketsCount: PropTypes.number.isRequired,
-  setFilter: PropTypes.func.isRequired
 };
 
 export default TicketsNotFound;
