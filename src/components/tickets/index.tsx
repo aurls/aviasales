@@ -9,7 +9,7 @@ import ErrorMessage from '../error-message';
 import './tickets.scss';
 
 type Props = {
-  tickets: Types.Tickets
+  tickets: Types.Ticket[]
   isFetching: boolean
   hasError: boolean
   setFilter: typeof actions.setFilter
@@ -37,11 +37,10 @@ const Tickets: React.FC<Props> = (props: Props) => {
   return (
     <div className="tickets">
       {
-        Object.values(tickets)
-          .map((ticket) =>
-            <Ticket
-              key={ticket.id}
-              ticket={ticket} />)
+        tickets.map((ticket) =>
+          <Ticket
+            key={ticket.id}
+            ticket={ticket} />)
       }
     </div>
   );
