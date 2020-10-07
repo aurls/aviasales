@@ -24,7 +24,7 @@ const reducer = (state: State = initialState, action: Actions.All): State => {
       return fetchTicketsFailure(state);
 
     case actionTypes.SET_FILTER:
-      return updateFilters(state, action.payload);
+      return setFilter(state, action.payload);
 
     case actionTypes.SET_SORTING:
       return setSorting(state, action.payload);
@@ -62,24 +62,34 @@ function fetchTicketsFailure (state: State): State {
   };
 }
 
-function updateFilters (state: State, filter: Types.Filter): State {
+function setFilter (state: State, filter: Types.Filter): State {
+  const updateFilters = (filters: Types.Filter[]) => ({
+    ...state,
+    filters
+  });
+  const currentFilters: Types.Filter[] = [...state.filters];
+
   if (filter === filters.ALL) {
-    if (state.filters.includes(filters.ALL)) {
-      return {
-        ...state,
-        filters: []
-      };
+    if (currentFilters.includes(filters.ALL)) {
+      return updateFilters([]);
     }
-    return {
-      ...state,
-      filters: [filters.ALL]
-    };
+    return updateFilters([filters.ALL]);
   }
 
-  return {
-    ...state,
-    filters: []
-  };
+  if (currentFilters.includes(filter)) {
+    return updateFilters(
+      [...currentFilters.filter((i) => i !== filter)]);
+  }
+
+  const filtersCount = Object.values(filters).length;
+  const currentFiltersCount = Object.values(currentFilters).length;
+
+  if (filtersCount - currentFiltersCount > 2) {
+    return updateFilters(
+      [...currentFilters.filter((i) => i !== filters.ALL), filter]);
+  }
+
+  return updateFilters([filters.ALL]);
 }
 
 function setSorting (state: State, sorting: Types.Sorting): State {

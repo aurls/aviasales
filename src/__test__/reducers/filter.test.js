@@ -1,6 +1,6 @@
 import filterReducer, { initialState } from '../../reducers/filterReducer';
 import * as actionTypes from '../../store/actionTypes';
-import * as filters from '../../constants/filters';
+import * as filters from '../../services/filters';
 
 describe('Filter reducer', () => {
   describe('All filters are on', () => {

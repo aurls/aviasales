@@ -1,8 +1,8 @@
 import sortingReducer, { initialState } from '../../reducers/sortingReducer';
 import * as actionTypes from '../../store/actionTypes';
-import * as sorting from '../../constants/sorting';
+import * as sorting from '../../services/sortings';
 
-describe('Sorting reducer', () => {
+describe('sorting reducer', () => {
   it('Set sorting', () => {
     const action = {
       type: actionTypes.SET_SORTING,
