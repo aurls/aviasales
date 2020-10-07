@@ -1,13 +1,18 @@
 import React from 'react';
 import Types from '../../types';
+import actions from '../../store/actions';
+
 import Ticket from '../ticket';
-import TicketsNotFound from '../tickets';
-import TicketsAreProcessing from '../tickets';
+import TicketsNotFound from '../tickets.not-found';
+import TicketsProcessing from '../tickets.processing';
 import ErrorMessage from '../error-message';
 import './tickets.scss';
 
 type Props = {
   tickets: Types.Tickets
+  isFetching: boolean
+  hasError: boolean
+  setFilter: typeof actions.setFilter
 }
 
 const Tickets: React.FC<Props> = (props: Props) => {
@@ -15,20 +20,19 @@ const Tickets: React.FC<Props> = (props: Props) => {
     tickets,
     isFetching,
     hasError,
-    setFilter } = props;
+    setFilter
+  } = props;
+
+  const ticketsCount = Object.values(tickets).length;
 
   if (hasError) return <ErrorMessage />;
-  // if (isFetching && tickets.length === 0) return <TicketsAreProcessing />;
+  if (isFetching && ticketsCount === 0) return <TicketsProcessing />;
 
-  // const filteredTickets = filterTickets(tickets, appliedFilters);
-  // if (filteredTickets.length === 0) {
-  //   return <tickets.not-found
-  //     ticketsCount={tickets.length}
-  //     setFilter={setFilter} />;
-  // }
-  //
-  // const sortedTickets = sortTickets(filteredTickets, appliedSorting);
-  // const preparedTickets = sortedTickets.slice(0, 6);
+  if (ticketsCount === 0) {
+    return <TicketsNotFound
+      setFilter={setFilter}
+      ticketsCount={ticketsCount} />;
+  }
 
   return (
     <div className="tickets">
@@ -41,6 +45,6 @@ const Tickets: React.FC<Props> = (props: Props) => {
       }
     </div>
   );
-}
+};
 
 export default Tickets;
