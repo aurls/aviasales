@@ -1,6 +1,6 @@
 import * as actionTypes from '../../store/actionTypes';
 import { setFilter } from '../../actions/filters';
-import * as filters from '../../constants/filters';
+import * as filters from '../../services/filters';
 
 describe('Filters action creators', () => {
   it('Set filter', () => {
