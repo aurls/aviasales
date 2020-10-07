@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Filters } from '../../components/Filters';
+import { Filters } from '../../components/filters';
 import { initialState as appliedFilters } from '../../reducers/filterReducer';
 
-describe('Filters component', () => {
+describe('filters component', () => {
   const setFilter = jest.fn();
   let component;
 

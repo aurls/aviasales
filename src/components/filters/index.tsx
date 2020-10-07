@@ -1,19 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import filters from '../../services/filters';
-import selectors from '../../store/selectors';
+import Types from '../../types';
 import actions from '../../store/actions';
+import filters from '../../services/filters';
 import './filters.scss';
 
-export const Filters = ({ filter, setFilter }) => {
-  // const isFilterChecked = (filter) => {
-  //   return appliedFilters.includes(filters.ALL.type) || appliedFilters.includes(filter.type);
-  // };
+type Props = {
+  currentFilters: Types.Filter[]
+  setFilter: typeof actions.setFilter
+}
 
-  const onChangeFilter = (event) => {
-    setFilter(event.target.value);
+const Filters: React.FC<Props> = (props: Props) => {
+  const {
+    currentFilters,
+    setFilter
+  } = props;
+
+  const isFilterChecked = (filter: Types.Filter) => {
+    return currentFilters.includes(filter) || currentFilters.includes(filters.ALL);
+  };
+
+  const onFilterClick = (filter: Types.Filter) => {
+    setFilter(filter);
   };
 
   return (
@@ -21,41 +28,22 @@ export const Filters = ({ filter, setFilter }) => {
       <h2 className="filters__title">Количество пересадок</h2>
       <ul>
         {
-          // Object.values(filters).map((filter) =>
-          //   <li key={filter.type}>
-          //     <label className="filter"
-          //       htmlFor={`filter-${filter.type}`}>
-          //       <input className="filter__checkbox"
-          //         id={`filter-${filter.type}`}
-          //         type="checkbox"
-          //         name="filter"
-          //         value={filter.type}
-          //         checked={isFilterChecked(filter)}
-          //         onChange={onChangeFilter} />
-          //       {filter.name}
-          //     </label>
-          //   </li>)
+          Object.values(filters).map((filter) =>
+            <li key={filter.type}>
+              <label className="filter">
+                <input className="filter__checkbox"
+                  type="checkbox"
+                  name="filter"
+                  value={filter.type}
+                  checked={isFilterChecked(filter)}
+                  onChange={() => onFilterClick(filter)} />
+                {filter.title}
+              </label>
+            </li>)
         }
       </ul>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    filter: selectors.getFilter(state)
-  };
-};
-
-const mapDispatchToProps = {
-  setFilter: actions.setFilter
-};
-
-Filters.propTypes = {
-
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Filters);
+export default React.memo(Filters);
