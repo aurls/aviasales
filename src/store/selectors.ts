@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import Types from '../types';
 import { State } from './storeTypes';
-import filters from '../constants/filters';
+import filters from '../services/filters';
 import filterTickets from '../services/filterTickets';
 import sortTickets from '../services/sortTickets';
 

@@ -20,7 +20,7 @@ const setFilter = (filter: Types.Filter): Actions.SetFilter => ({
   payload: filter
 });
 
-const setSorting = (sorting: string): Actions.SetSorting => ({
+const setSorting = (sorting: Types.Sorting): Actions.SetSorting => ({
   type: actionTypes.SET_SORTING,
   payload: sorting
 });

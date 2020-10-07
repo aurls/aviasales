@@ -1,5 +1,5 @@
 namespace Types {
-  type Segment = {
+  export type Segment = {
     origin: string
     destination: string
     date: string
@@ -7,13 +7,11 @@ namespace Types {
     duration: number
   }
 
-  type Ticket = {
+  export type Ticket = {
     id: string
     price: number
     carrier: string
-    segments: {
-      [index: string]: Segment
-    }
+    segments: Segment[]
   }
 
   export type Tickets = {
@@ -26,6 +24,12 @@ namespace Types {
     type: string
     title: string
     fn: (numberOfTransfers: number) => boolean
+  }
+
+  export type Sorting = {
+    type: string
+    title: string
+    fn: (valueA: number, valueB: number) => number
   }
 }
 

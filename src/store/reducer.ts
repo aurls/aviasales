@@ -1,15 +1,15 @@
 import Types from '../types';
 import actionTypes from './actionTypes';
 import { Actions, State } from './storeTypes';
-import filters from '../constants/filters';
-import sorting from '../constants/sorting';
+import filters from '../services/filters';
+import sortings from '../services/sortings';
 
 const initialState: State = {
   tickets: {},
   isFetching: true,
   hasError: false,
-  filter: filters.ALL,
-  sorting: sorting.BY_PRICE_ASC
+  filters: [filters.ALL],
+  sorting: sortings.BY_PRICE_ASC
 };
 
 const reducer = (state: State = initialState, action: Actions.All): State => {
@@ -24,7 +24,7 @@ const reducer = (state: State = initialState, action: Actions.All): State => {
       return fetchTicketsFailure(state);
 
     case actionTypes.SET_FILTER:
-      return setFilter(state, action.payload);
+      return updateFilters(state, action.payload);
 
     case actionTypes.SET_SORTING:
       return setSorting(state, action.payload);
@@ -62,14 +62,27 @@ function fetchTicketsFailure (state: State): State {
   };
 }
 
-function setFilter (state: State, filter: Types.Filter): State {
+function updateFilters (state: State, filter: Types.Filter): State {
+  if (filter === filters.ALL) {
+    if (state.filters.includes(filters.ALL)) {
+      return {
+        ...state,
+        filters: []
+      };
+    }
+    return {
+      ...state,
+      filters: [filters.ALL]
+    };
+  }
+
   return {
     ...state,
-    filter
+    filters: []
   };
 }
 
-function setSorting (state: State, sorting: string): State {
+function setSorting (state: State, sorting: Types.Sorting): State {
   return {
     ...state,
     sorting

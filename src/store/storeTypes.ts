@@ -22,7 +22,7 @@ export namespace Actions {
 
   export type SetSorting = {
     type: typeof actionTypes.SET_SORTING,
-    payload: string
+    payload: Types.Sorting
   }
 
   export type All =
@@ -37,6 +37,6 @@ export type State = {
   tickets: Types.Tickets,
   isFetching: boolean,
   hasError: boolean,
-  filter: Types.Filter,
-  sorting: string
+  filters: Types.Filter[],
+  sorting: Types.Sorting
 }
