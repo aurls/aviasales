@@ -21,7 +21,7 @@ export const formatTime = (time: string | number): string => {
     minute: '2-digit',
     timeZone: 'Europe/Moscow'
   };
-  return new Date(time).toLocaleTimeString([], options);
+  return new Date(time).toLocaleTimeString([], options).slice(0, 5);
 };
 
 export const getDuration = (duration: number): string => {
