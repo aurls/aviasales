@@ -21,7 +21,7 @@ const Ticket: React.FC<Props> = ({ ticket }: Props) => {
   return (
     <section key={ticket.id} className="ticket">
       <div className="ticket__price">
-        {formatPrice(ticket.price)}&nbsp;₽
+        {formatPrice(ticket.price)}&nbsp;Р
       </div>
       <div className="ticket__carrier">
         <img className="ticket__carrier-logo"
