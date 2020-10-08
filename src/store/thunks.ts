@@ -7,7 +7,8 @@ import Server from '../services/server';
 const {
   fetchTicketsRequest,
   fetchTicketsSuccess,
-  fetchTicketsFailure
+  fetchTicketsFailure,
+  setFetching
 } = actions;
 
 const fetchTickets =
@@ -20,7 +21,9 @@ const fetchTickets =
       try {
         const { tickets, isStop } = await server.getTickets(searchId);
         dispatch(fetchTicketsSuccess(tickets));
-        if (!isStop) await sendRequest();
+        isStop
+          ? dispatch(setFetching(false))
+          : await sendRequest();
       } catch (error) {
         await sendRequest();
       }

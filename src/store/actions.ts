@@ -15,6 +15,11 @@ const fetchTicketsFailure = (): Actions.FetchTicketsFailure => ({
   type: actionTypes.FETCH_TICKETS_FAILURE
 });
 
+const setFetching = (isFetching: boolean): Actions.SetFetching => ({
+  type: actionTypes.SET_FETCHING,
+  payload: isFetching
+});
+
 const setFilter = (filter: Types.Filter): Actions.SetFilter => ({
   type: actionTypes.SET_FILTER,
   payload: filter
@@ -29,6 +34,7 @@ export default {
   fetchTicketsRequest,
   fetchTicketsSuccess,
   fetchTicketsFailure,
+  setFetching,
   setFilter,
   setSorting
 };

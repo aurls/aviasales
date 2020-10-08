@@ -15,6 +15,11 @@ export namespace Actions {
     type: typeof actionTypes.FETCH_TICKETS_FAILURE
   }
 
+  export type SetFetching = {
+    type: typeof actionTypes.SET_FETCHING,
+    payload: boolean
+  }
+
   export type SetFilter = {
     type: typeof actionTypes.SET_FILTER,
     payload: Types.Filter
@@ -29,6 +34,7 @@ export namespace Actions {
     | FetchTicketsRequest
     | FetchTicketsSuccess
     | FetchTicketsFailure
+    | SetFetching
     | SetFilter
     | SetSorting
 }

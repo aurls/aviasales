@@ -23,6 +23,9 @@ const reducer = (state: State = initialState, action: Actions.All): State => {
     case actionTypes.FETCH_TICKETS_FAILURE:
       return fetchTicketsFailure(state);
 
+    case actionTypes.SET_FETCHING:
+      return setFetching(state, action.payload);
+
     case actionTypes.SET_FILTER:
       return setFilter(state, action.payload);
 
@@ -49,7 +52,6 @@ function fetchTicketsSuccess (state: State, newTickets: Types.Tickets): State {
       ...state.tickets,
       ...newTickets
     },
-    isFetching: false,
     hasError: false
   };
 }
@@ -59,6 +61,13 @@ function fetchTicketsFailure (state: State): State {
     ...state,
     isFetching: false,
     hasError: true
+  };
+}
+
+function setFetching (state: State, isFetching: boolean): State {
+  return {
+    ...state,
+    isFetching
   };
 }
 
