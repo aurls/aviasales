@@ -6,7 +6,6 @@ exports[`Sorting component Default state 1`] = `
 >
   <li
     className="sorting__item is-active"
-    id="BY_PRICE_ASC"
     key="BY_PRICE_ASC"
     onClick={[Function]}
   >
@@ -14,7 +13,6 @@ exports[`Sorting component Default state 1`] = `
   </li>
   <li
     className="sorting__item"
-    id="BY_SPEED_ASC"
     key="BY_SPEED_ASC"
     onClick={[Function]}
   >

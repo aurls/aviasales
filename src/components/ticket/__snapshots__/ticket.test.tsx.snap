@@ -3,6 +3,7 @@
 exports[`Ticket component Default state 1`] = `
 <section
   className="ticket"
+  key="1"
 >
   <div
     className="ticket__price"
@@ -21,7 +22,7 @@ exports[`Ticket component Default state 1`] = `
   </div>
   <div
     className="ticket__segment"
-    key="undefined797"
+    key="1797"
   >
     <div
       className="ticket__time"
@@ -36,9 +37,9 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        11:24 PM
+        23:24
          – 
-        12:41 PM
+        12:41
       </p>
     </div>
     <div
@@ -61,16 +62,18 @@ exports[`Ticket component Default state 1`] = `
       <h3
         className="ticket__segment-subtitle"
       >
-        Без пересадок
+        2 пересадки
       </h3>
       <p
         className="ticket__segment-info"
-      />
+      >
+        SHA, AUH
+      </p>
     </div>
   </div>
   <div
     className="ticket__segment"
-    key="undefined775"
+    key="1775"
   >
     <div
       className="ticket__time"
@@ -110,11 +113,13 @@ exports[`Ticket component Default state 1`] = `
       <h3
         className="ticket__segment-subtitle"
       >
-        Без пересадок
+        1 пересадка
       </h3>
       <p
         className="ticket__segment-info"
-      />
+      >
+        DXB
+      </p>
     </div>
   </div>
 </section>

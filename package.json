@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "webpack-dev-server --env.mode=development",
-    "test": "jest --coverage --colors",
+    "test": "jest --colors --coverage",
     "build": "webpack --env.mode=production"
   },
   "dependencies": {
@@ -22,7 +22,10 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/classnames": "^2.2.10",
+    "@types/enzyme": "^3.10.7",
+    "@types/jest": "^26.0.14",
     "@types/react": "^16.9.51",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
@@ -76,12 +79,13 @@
   "babel": {
     "presets": [
       "@babel/env",
-      "@babel/react"
+      "@babel/react",
+      "@babel/preset-typescript"
     ]
   },
   "jest": {
     "setupFiles": [
-      "./src/__test__/setupTests.js"
+      "./src/setupTests.ts"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

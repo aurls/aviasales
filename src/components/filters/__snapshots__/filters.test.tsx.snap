@@ -15,12 +15,10 @@ exports[`Filters component Default state 1`] = `
     >
       <label
         className="filter"
-        htmlFor="filter-ALL"
       >
         <input
           checked={true}
           className="filter__checkbox"
-          id="filter-ALL"
           name="filter"
           onChange={[Function]}
           type="checkbox"
@@ -34,12 +32,10 @@ exports[`Filters component Default state 1`] = `
     >
       <label
         className="filter"
-        htmlFor="filter-NO_TRANSFERS"
       >
         <input
           checked={true}
           className="filter__checkbox"
-          id="filter-NO_TRANSFERS"
           name="filter"
           onChange={[Function]}
           type="checkbox"
@@ -53,12 +49,10 @@ exports[`Filters component Default state 1`] = `
     >
       <label
         className="filter"
-        htmlFor="filter-ONE_TRANSFER"
       >
         <input
           checked={true}
           className="filter__checkbox"
-          id="filter-ONE_TRANSFER"
           name="filter"
           onChange={[Function]}
           type="checkbox"
@@ -72,12 +66,10 @@ exports[`Filters component Default state 1`] = `
     >
       <label
         className="filter"
-        htmlFor="filter-TWO_TRANSFERS"
       >
         <input
           checked={true}
           className="filter__checkbox"
-          id="filter-TWO_TRANSFERS"
           name="filter"
           onChange={[Function]}
           type="checkbox"
@@ -91,12 +83,10 @@ exports[`Filters component Default state 1`] = `
     >
       <label
         className="filter"
-        htmlFor="filter-THREE_TRANSFERS"
       >
         <input
           checked={true}
           className="filter__checkbox"
-          id="filter-THREE_TRANSFERS"
           name="filter"
           onChange={[Function]}
           type="checkbox"

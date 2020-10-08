@@ -4,7 +4,7 @@ import { Actions, State } from './storeTypes';
 import filters from '../services/filters';
 import sortings from '../services/sortings';
 
-const initialState: State = {
+export const initialState: State = {
   tickets: {},
   isFetching: true,
   hasError: false,
