@@ -1,8 +1,8 @@
 import * as actionTypes from '../../store/actionTypes';
 import { setSorting } from '../../actions/sorting';
-import * as sorting from '../../constants/sorting';
+import * as sorting from '../../services/sortings';
 
-describe('Sorting action creators', () => {
+describe('sorting action creators', () => {
   it('Set sorting', () => {
     const newSorting = sorting.BY_SPEED_ASC;
     const expectedAction = {

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Sorting } from '../../components/Sorting';
+import { Sorting } from '../../components/sorting';
 import { initialState as appliedSorting } from '../../reducers/sortingReducer';
-import * as sorting from '../../constants/sorting';
+import * as sorting from '../../services/sortings';
 
-describe('Sorting component', () => {
+describe('sorting component', () => {
   const setSorting = jest.fn();
   let component;
 
@@ -20,7 +20,7 @@ describe('Sorting component', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('Sorting changed', () => {
+  it('sorting changed', () => {
     const id = Object.values(sorting)[1].type;
     const selector = `.sorting__item[id="${id}"]`;
     component.find(selector).simulate('click', { target: { id } });
