@@ -37,7 +37,7 @@ class Server {
     const normalizedTickets: Types.Tickets = {};
 
     tickets.forEach((ticket) => {
-      const id = nanoid(10);
+      const id = nanoid();
       normalizedTickets[id] = {
         ...ticket,
         id
