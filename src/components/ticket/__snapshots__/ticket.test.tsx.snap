@@ -22,7 +22,7 @@ exports[`Ticket component Default state 1`] = `
   </div>
   <div
     className="ticket__segment"
-    key="1797"
+    key="1297"
   >
     <div
       className="ticket__time"
@@ -39,7 +39,7 @@ exports[`Ticket component Default state 1`] = `
       >
         05:24
          – 
-        18:41
+        10:21
       </p>
     </div>
     <div
@@ -53,7 +53,7 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        13ч 17м
+        4ч 57м
       </p>
     </div>
     <div
@@ -73,7 +73,7 @@ exports[`Ticket component Default state 1`] = `
   </div>
   <div
     className="ticket__segment"
-    key="1775"
+    key="1275"
   >
     <div
       className="ticket__time"
@@ -88,9 +88,9 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        Inval
+        10:10
          – 
-        Inval
+        14:45
       </p>
     </div>
     <div
@@ -104,7 +104,7 @@ exports[`Ticket component Default state 1`] = `
       <p
         className="ticket__segment-info"
       >
-        12ч 55м
+        4ч 35м
       </p>
     </div>
     <div
