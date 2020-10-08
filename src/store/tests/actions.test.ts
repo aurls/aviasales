@@ -2,7 +2,7 @@ import actionTypes from '../actionTypes';
 import filters from '../../services/filters';
 import sortings from '../../services/sortings';
 import actions from '../actions';
-import mockedTickets from './mockedTicket';
+import mockedTicket from './mockedTicket';
 
 describe('Action creators', () => {
   it('fetchTicketsRequest', () => {
@@ -13,6 +13,9 @@ describe('Action creators', () => {
   });
 
   it('fetchTicketsSuccess', () => {
+    const mockedTickets = {
+      [mockedTicket.id]: mockedTicket
+    };
     const action = {
       type: actionTypes.FETCH_TICKETS_SUCCESS,
       payload: mockedTickets
