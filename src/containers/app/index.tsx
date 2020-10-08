@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Types from '../../types';
+import { connect, ConnectedProps } from 'react-redux';
 import { State } from '../../store/storeTypes';
 import actions from '../../store/actions';
 import thunks from '../../store/thunks';
@@ -12,16 +11,7 @@ import Sorting from '../../components/sorting';
 import Tickets from '../../components/tickets';
 import './app.scss';
 
-type Props = {
-  tickets: Types.Ticket[]
-  filters: Types.Filter[]
-  sorting: Types.Sorting
-  isFetching: boolean
-  hasError: boolean
-  fetchTickets: ReturnType<typeof thunks.fetchTickets>
-  setFilter: typeof actions.setFilter
-  setSorting: typeof actions.setSorting
-}
+type Props = PropsFromRedux
 
 const App: React.FC<Props> = (props: Props) => {
   const {
@@ -36,7 +26,7 @@ const App: React.FC<Props> = (props: Props) => {
   } = props;
 
   React.useEffect(() => {
-    // fetchTickets();
+    fetchTickets();
   }, []);
 
   return (
@@ -79,7 +69,7 @@ const mapDispatch = {
   setSorting: actions.setSorting
 };
 
-export default connect(
-  mapState,
-  mapDispatch
-)(App);
+const connector = connect(mapState, mapDispatch);
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+export default connector(App);
