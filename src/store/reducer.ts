@@ -76,6 +76,12 @@ function setFilter (state: State, filter: Types.Filter): State {
     return updateFilters([filters.ALL]);
   }
 
+  if (currentFilters.includes(filters.ALL)) {
+    return updateFilters(
+      [...Object.values(filters)
+        .filter((i) => i !== filters.ALL && i !== filter)]);
+  }
+
   if (currentFilters.includes(filter)) {
     return updateFilters(
       [...currentFilters.filter((i) => i !== filter)]);
