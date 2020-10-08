@@ -10,6 +10,7 @@ import './tickets.scss';
 
 type Props = {
   tickets: Types.Ticket[]
+  ticketsCount: number
   isFetching: boolean
   hasError: boolean
   setFilter: typeof actions.setFilter
@@ -18,17 +19,16 @@ type Props = {
 const Tickets: React.FC<Props> = (props: Props) => {
   const {
     tickets,
+    ticketsCount,
     isFetching,
     hasError,
     setFilter
   } = props;
 
-  const ticketsCount = Object.values(tickets).length;
-
   if (hasError) return <ErrorMessage />;
-  if (isFetching && ticketsCount === 0) return <TicketsProcessing />;
+  if (isFetching && tickets.length === 0) return <TicketsProcessing />;
 
-  if (ticketsCount === 0) {
+  if (tickets.length === 0) {
     return <TicketsNotFound
       setFilter={setFilter}
       ticketsCount={ticketsCount} />;

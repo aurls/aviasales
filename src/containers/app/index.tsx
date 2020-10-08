@@ -16,6 +16,7 @@ type Props = PropsFromRedux
 const App: React.FC<Props> = (props: Props) => {
   const {
     tickets,
+    ticketsCount,
     filters,
     sorting,
     isFetching,
@@ -46,6 +47,7 @@ const App: React.FC<Props> = (props: Props) => {
             setSorting={setSorting} />
           <Tickets
             tickets={tickets}
+            ticketsCount={ticketsCount}
             isFetching={isFetching}
             hasError={hasError}
             setFilter={setFilter} />
@@ -57,6 +59,7 @@ const App: React.FC<Props> = (props: Props) => {
 
 const mapState = (state: State) => ({
   tickets: selectors.getTickets(state),
+  ticketsCount: selectors.getTicketsCount(state),
   filters: selectors.getFilters(state),
   sorting: selectors.getSorting(state),
   isFetching: selectors.getIsFetching(state),
