@@ -5,7 +5,7 @@ import mockedTicket from '../store/tests/mockedTicket';
 
 describe('Util functions', () => {
   it('getTicketDuration', () => {
-    expect(getTicketDuration(mockedTicket)).toEqual(572);
+    expect(getTicketDuration(mockedTicket)).toEqual(372);
   });
 
   it('getWordFormAfterNumber', () => {

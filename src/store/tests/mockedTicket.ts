@@ -15,7 +15,7 @@ export default {
       destination: 'HKT',
       date: '2020-02-08T07:10:00.000Z',
       stops: ['DXB'],
-      duration: 275
+      duration: 75
     }
   ]
 };
