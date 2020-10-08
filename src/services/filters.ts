@@ -30,6 +30,23 @@ const THREE_TRANSFERS: Types.Filter = {
   fn: (numberOfTransfers: number) => numberOfTransfers === 3
 };
 
+export const filterTickets = (tickets: Types.Ticket[], filters: Types.Filter[]): Types.Ticket[] => {
+  const isTicketFiltered = (ticket: Types.Ticket): boolean => {
+    for (const segment of ticket.segments) {
+      for (const filter of filters) {
+        if (filter.fn(segment.stops.length)) return true;
+      }
+    }
+    return false;
+  };
+
+  // @ts-ignore
+  return tickets.reduce((acc, ticket) => {
+    if (isTicketFiltered(ticket)) return [...acc, ticket];
+    return acc;
+  }, []);
+};
+
 export default {
   ALL,
   NO_TRANSFERS,
